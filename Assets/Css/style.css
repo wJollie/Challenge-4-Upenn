@@ -1,0 +1,130 @@
+/* style.css */
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+}
+
+/* Quiz wrapper */
+#quizWrapper {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Quiz title */
+#quizWrapper h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Choices list */
+#choices {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Choice item */
+#choices li {
+  margin-bottom: 10px;
+}
+
+/* Start button */
+#start {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #428bca;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Timer wrapper */
+#timerWrapper {
+  margin-top: 20px;
+  text-align: right;
+}
+
+/* Answer checked */
+#answerChecked {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Result */
+#resultWrapper {
+  text-align: center;
+}
+
+/* End wrapper */
+#endWrapper {
+  display: none;
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Score wrapper */
+#scoreWrapper {
+  text-align: center;
+}
+
+/* Initials input */
+#initials {
+  padding: 5px;
+  margin-top: 10px;
+  width: 100px;
+  text-align: center;
+}
+
+/* Submit button */
+#submitButton {
+  margin-top: 10px;
+  padding: 5px 10px;
+  font-size: 14px;
+  background-color: #428bca;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* High scores */
+#highScoreWrapper {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* High score list */
+#highScoreList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* High score item */
+#highScoreList li {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  #quizWrapper,
+  #endWrapper {
+    max-width: 400px;
+  }
+}
