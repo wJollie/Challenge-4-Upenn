@@ -28,16 +28,18 @@
         <button id="start">Start Quiz</button>
         <!-- timer -->
         <section id="timerWrapper">
-            <p>Time: <span id="timer"></span></p>
+            <p>Time Left: <span id="timer"></span></p>
         </section>
     </main>
     <main id="endWrapper">
         <!-- scores -->
         <section id="scoreWrapper">
             <h2>Your Score is: <span id="individualScore"></span></h2>
-            <label for="initials">Enter Initials: </label>
-            <input type="text" id="initials" maxlength="5">
+            <section id="buttonWrapper">
+            <input type="text" id="initials" maxlength="5" placeholder ="Enter Initials Here">
             <button id="submitButton">Submit</button>
+            <button id="retryButton">Retry Quiz</button>
+            </section>
         </section>
         <!-- highscores -->
         <section id="highScoreWrapper">

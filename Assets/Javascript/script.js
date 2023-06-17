@@ -77,12 +77,14 @@ const initialsInput = document.getElementById("initials");
 const highScoreList = document.getElementById("highScoreList");
 const checker = document.getElementById("checker");
 const answerChecked = document.getElementById("answerChecked");
+const retryButton = document.getElementById("retryButton");
 
 // Hide elements on website load
-endWrapper.style.visibility = "hidden";
-timerWrapper.style.visibility = "hidden";
-checker.style.visibility = "hidden";
-answerChecked.style.visibility = "hidden";
+endWrapper.style.display = "none";
+timerWrapper.style.display = "none";
+checker.style.display = "none";
+answerChecked.style.display = "none";
+retryButton.style.display = "none";
 
 // Event listener for start button
 startButton.addEventListener("click", startQuiz);
@@ -90,6 +92,10 @@ startButton.addEventListener("click", startQuiz);
 choicesWrapper.addEventListener("click", answerChoice);
 // Event listener for submit button
 submitButton.addEventListener("click", saveInitials);
+// Event listener for retry quiz
+retryButton.addEventListener("click", startQuiz);
+
+startButton.style.visibility = "visible";
 
 // Start quiz function
 function startQuiz() {
@@ -98,14 +104,17 @@ function startQuiz() {
   score = 0;
   saved = 0;
   quizWrapper.style.background = "white";
+  initialsInput.value = "";
 
   // Hide start button once clicked
+  checker.textContent = "";
+  checker.style.background = "white";
   startButton.style.visibility = "hidden";
-  quizWrapper.style.visibility = "visible";
-  endWrapper.style.visibility = "hidden";
-  timerWrapper.style.visibility = "visible";
-  checker.style.visibility = "visible";
-  answerChecked.style.visibility = "visible";
+  quizWrapper.style.display = "block";
+  endWrapper.style.display = "none";
+  timerWrapper.style.display = "block";
+  checker.style.display = "block";
+  answerChecked.style.display = "block";
 
   startTimer();
   displayQuestion();
@@ -167,15 +176,14 @@ function displayQuestion() {
   });
 }
 
-// End quiz function
+/// End quiz function
 function endQuiz() {
-  startButton.style.visibility = "visible";
-  startButton.textContent = "Retry Quiz";
-  quizWrapper.style.visibility = "hidden";
-  endWrapper.style.visibility = "visible";
-  timerWrapper.style.visibility = "hidden";
-  checker.style.visibility = "hidden";
-  answerChecked.style.visibility = "hidden";
+  retryButton.style.display = "block";
+  quizWrapper.style.display = "none";
+  endWrapper.style.display = "block";
+  timerWrapper.style.display = "none";
+  checker.style.display = "none";
+  answerChecked.style.display = "none";
 }
 
 // Answer choice function

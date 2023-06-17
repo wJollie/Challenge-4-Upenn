@@ -70,13 +70,25 @@ li.choices:hover {
     background-color: var(--shdw-color);
     color: white;
 }
-/* Submit Button */
-#submitButton {
-    margin: 0px auto;
-    box-shadow: 0 2px 4px var(--shdw-color);
-    background-color: var(--bg-color);
+#buttonWrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
-#submitButton:hover {
-    background-color: var(--shdw-color);
-    color: white;
+/* initials */
+#initials {
+    margin-right: 10px;
+    padding: 5px;
+}
+/* Submit Button and retry button*/
+#submitButton,
+#retryButton {
+  margin: 0 10px;
+  box-shadow: 0 2px 4px var(--shdw-color);
+  background-color: var(--bg-color);
+}
+#submitButton:hover,
+#retryButton:hover {
+  background-color: var(--shdw-color);
+  color: white;
 }
