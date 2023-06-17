@@ -1,1 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="./Assets/Css/style.css">
+  </head>
+  <body>
+    <!-- Wrapper for entire quiz -->
+    <main id="quizWrapper">
+        <!-- questions -->
+        <section id="questionWrapper">
+            <h2 id="question"></h2>
+            <ul id="choices">
 
+            </ul>
+        </section>
+        <!-- question results -->
+        <section id="resultWrapper">
+            <p id="result"></p>
+        </section>
+        <button id="start">Start Quiz</button>
+        <!-- timer -->
+        <section id="timerWrapper">
+            <p>Time: <span id="timer"></span></p>
+        </section>
+        <!-- scores -->
+        <section id="scoreWrapper">
+            <label for="initials">Enter Initials: </label>
+            <input type="text" id="initials" maxlength="5">
+            <button id="submitButton">Submit</button>
+        </section>
+        <!-- highscores -->
+        <section id="highScoreWrapper">
+            <h2>High Scores</h2>
+            <ol id="highScoreList">
+
+            </ol>
+        </section>
+    </main>
+    <script src="./Assets/Javascript/script.js"></script>
+  </body>
+</html>
