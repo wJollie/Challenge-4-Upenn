@@ -1,59 +1,61 @@
 // Array of questions and answers
+// Questions from https://www.w3docs.com/quiz/javascript-basic
 const quizQuestions = [
   {
-    question: "What color is the sky?",
-    choices: ["Green", "Blue", "Purple", "Rainbow"],
-    correctAnswer: 1,
-  },
-  {
-    question: "What color is grass?",
-    choices: ["Orange", "Green", "Blue", "Purple"],
-    correctAnswer: 1,
-  },
-  {
-    question: "What sound does a dog make?",
-    choices: ["Meow", "Moo", "Roar", "Bark"],
-    correctAnswer: 3,
-  },
-  {
-    question: "placeHolderQuestion4",
-    choices: [
-      "placeHolderAnswer1",
-      "placeHolderAnswer2",
-      "placeHolderAnswer3",
-      "placeHolderAnswer4",
-    ],
-    correctAnswer: 0,
-  },
-  {
-    question: "placeHolderQuestion5",
-    choices: [
-      "placeHolderAnswer1",
-      "placeHolderAnswer2",
-      "placeHolderAnswer3",
-      "placeHolderAnswer4",
-    ],
+    question: "Which is the correct way to write a comment in JavaScript?",
+    choices: ["{#...#}", "<!---...---!>", "//...", "\\..."],
     correctAnswer: 2,
   },
   {
-    question: "placeHolderQuestion6",
+    question: "How do you get the DOM element with id in JavaScript?",
     choices: [
-      "placeHolderAnswer1",
-      "placeHolderAnswer2",
-      "placeHolderAnswer3",
-      "placeHolderAnswer4",
+      "window.getElementById(...)",
+      "document.getElementById(...)",
+      "page.getElementById(...)",
+      "document.innerHTML.getElementById(...)",
+    ],
+    correctAnswer: 1,
+  },
+  {
+    question: "How do you create a new function in JavaScript?",
+    choices: [
+      "new.function() {}",
+      "function:myFunction() {}",
+      "function = myFunction() {}",
+      "function myFunction() {}",
     ],
     correctAnswer: 3,
   },
   {
-    question: "placeHolderQuestion7",
+    question: "Which of the following does the pop() method do?",
     choices: [
-      "placeHolderAnswer1",
-      "placeHolderAnswer2",
-      "placeHolderAnswer3",
-      "placeHolderAnswer4",
+      "It increments the total length by 1",
+      "It decrements the total length by 1",
+      "It prints the first element but no effect on the length",
+      "None of the above",
     ],
     correctAnswer: 1,
+  },
+  {
+    question:
+      "Which of the following is used for assigning a value to a variable?",
+    choices: ["*", "=", "-", "x"],
+    correctAnswer: 1,
+  },
+  {
+    question: "Inside which element do you put Javascript?",
+    choices: ["<var>", "<script>", "<section>", "<code>"],
+    correctAnswer: 1,
+  },
+  {
+    question: "How do you open a new window with JavaScript?",
+    choices: [
+      "window.open(...)",
+      "window.new(...)",
+      "open(new window())",
+      "window.open_new(...)",
+    ],
+    correctAnswer: 0,
   },
 ];
 
