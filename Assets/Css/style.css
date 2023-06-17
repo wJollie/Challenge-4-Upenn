@@ -1,0 +1,82 @@
+/* universal color variables */
+:root {
+    --bg-color: white;
+    --txt-color: black;
+    --shdw-color: #4a5158 ;
+    
+}
+
+/* background of the website */
+body {
+    background-color: var(--bg-color) ;
+    margin: 0;
+    padding: 0;
+}
+/* wrapper for the entire quiz */
+#quizWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--bg-color);
+}
+/* quiz title */
+h1 {
+    font-size: 24px ;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    
+}
+/* inside wrappers */
+#questionWrapper,
+#timerWrapper,
+#answerChecked,
+#scoreWrapper,
+#highScoreWrapper {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px var(--shdw-color); 
+}
+#timerWrapper {
+    font-size: 20px;
+}
+/* individual choices */
+li.choices {
+    border-radius: 2px;
+    box-shadow: 0 2px 4px var(--shdw-color);
+    padding: 10px;
+}
+li.choices:hover {
+    background-color: var(--shdw-color);
+    color: white;
+}
+/* choices list */
+#choices {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+/* Start Button */
+#start {
+    display: block;
+    margin: 20px auto;
+    box-shadow: 0 2px 4px var(--shdw-color);
+    background-color: var(--bg-color);
+}
+#start:hover {
+    background-color: var(--shdw-color);
+    color: white;
+}
+/* Submit Button */
+#submitButton {
+    margin: 0px auto;
+    box-shadow: 0 2px 4px var(--shdw-color);
+    background-color: var(--bg-color);
+}
+#submitButton:hover {
+    background-color: var(--shdw-color);
+    color: white;
+}
