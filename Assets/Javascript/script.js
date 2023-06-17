@@ -56,11 +56,14 @@ const quizQuestions = [
     correctAnswer: 1,
   },
 ];
+
+// Declaring variables I'm gonna need
 let currentQuestionIndex = 0;
 let score = 0;
 let remainingTime = 0;
 let saved = 0;
-// Referencing start button and question choices
+
+// Referencing all elements I'm gonna need
 const startButton = document.getElementById("start");
 const choicesWrapper = document.getElementById("choices");
 const quizWrapper = document.getElementById("quizWrapper");
@@ -75,48 +78,55 @@ const highScoreList = document.getElementById("highScoreList");
 const checker = document.getElementById("checker");
 const answerChecked = document.getElementById("answerChecked");
 
-// hidden on website load
+// Hide elements on website load
 endWrapper.style.visibility = "hidden";
 timerWrapper.style.visibility = "hidden";
 checker.style.visibility = "hidden";
 answerChecked.style.visibility = "hidden";
 
-// event listener for start button
+// Event listener for start button
 startButton.addEventListener("click", startQuiz);
-// event listener for choices
+// Event listener for choices
 choicesWrapper.addEventListener("click", answerChoice);
+// Event listener for submit button
+submitButton.addEventListener("click", saveInitials);
 
-// start quiz function
+// Start quiz function
 function startQuiz() {
-  //   Resets variables
+  // Reset variables
   currentQuestionIndex = 0;
   score = 0;
   saved = 0;
   quizWrapper.style.background = "white";
-  // takes away start button once clicked
+
+  // Hide start button once clicked
   startButton.style.visibility = "hidden";
   quizWrapper.style.visibility = "visible";
   endWrapper.style.visibility = "hidden";
   timerWrapper.style.visibility = "visible";
   checker.style.visibility = "visible";
   answerChecked.style.visibility = "visible";
+
   startTimer();
   displayQuestion();
 }
-// timer interval
+
+// Timer interval
 let timerInterval;
-// timer function
+
+// Timer function
 function startTimer() {
-  // timer set for 120
+  // Timer set for 120
   const duration = 120;
   remainingTime = duration;
   displayTime();
   clearInterval(timerInterval);
-  timerInterval = setInterval(function () {
-    // time ticks down
+  timerInterval = setInterval(() => {
+    // Time ticks down
     remainingTime--;
     displayTime();
-    // if time hits 0 timer clears quiz ends
+
+    // If time hits 0, timer clears and quiz ends
     if (remainingTime <= 0) {
       clearInterval(timerInterval);
       endQuiz();
@@ -126,32 +136,38 @@ function startTimer() {
 
 // Function to display the time on the timer
 function displayTime() {
-  // referencing timer element
+  // Referencing timer element
   const timerElement = document.getElementById("timer");
   const seconds = remainingTime;
+
   // Displaying time left
   timerElement.textContent = seconds;
 }
 
-// getting question function
+// Getting question function
 function displayQuestion() {
-  // referencing questions and choices
+  // Referencing questions and choices
   const questionElement = document.getElementById("question");
-  // getting the current question from the question array
+
+  // Getting the current question from the question array
   const currentQuestion = quizQuestions[currentQuestionIndex];
-  //   updating the question element
+
+  // Update the question element
   questionElement.textContent = currentQuestion.question;
-  //   reset the wrapper
+
+  // Reset the wrapper
   choicesWrapper.innerHTML = "";
-  // create and edit answer choices
-  currentQuestion.choices.forEach(function (choice, index) {
+
+  // Create and append answer choices
+  currentQuestion.choices.forEach((choice, index) => {
     const choiceElement = document.createElement("li");
     choiceElement.classList.add("choices");
     choiceElement.textContent = choice;
     choicesWrapper.appendChild(choiceElement);
   });
 }
-// end quiz function
+
+// End quiz function
 function endQuiz() {
   startButton.style.visibility = "visible";
   startButton.textContent = "Retry Quiz";
@@ -162,7 +178,7 @@ function endQuiz() {
   answerChecked.style.visibility = "hidden";
 }
 
-// answer choice function
+// Answer choice function
 function answerChoice(event) {
   const selectedChoice = event.target;
   if (selectedChoice.classList.contains("choices")) {
@@ -176,7 +192,7 @@ function answerChoice(event) {
       score++;
       checker.textContent = "Correct";
       checker.style.background = "green";
-      // updates score as it goes up
+      // Update score as it goes up
       individualScore.textContent = score;
     } else {
       checker.style.background = "red";
@@ -193,9 +209,8 @@ function answerChoice(event) {
     }
   }
 }
-// event listener for submit button
-submitButton.addEventListener("click", saveInitials);
-// initials Function
+
+// Save initials function
 function saveInitials() {
   if (saved === 0) {
     const initials = initialsInput.value;
@@ -228,9 +243,8 @@ function createHighScoreItem(leader) {
   liElement.textContent = leader.initials + ": " + leader.score;
   return liElement;
 }
-
 // Helper function to get the score from a high score item
 function getScore(item) {
   const scoreText = item.textContent.split(":")[1].trim();
-  return parseInt(scoreText);
+  return scoreText === "" ? 0 : parseInt(scoreText);
 }
